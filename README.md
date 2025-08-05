@@ -132,3 +132,16 @@ This project is licensed under the [MIT License](LICENSE).
 
 Feel free to submit issues or pull requests if you find bugs or want to improve something.
 # prodev_
+
+
+
+Technical information
+
+State Management 
+-Riverpod and Hooks
+
+Asset generator
+-spider
+
+Public Api
+-Spotify Api
