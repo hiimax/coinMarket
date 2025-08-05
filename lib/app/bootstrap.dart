@@ -1,26 +1,12 @@
 import 'dart:async';
 import 'dart:developer';
-import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:prodev/app/service_locator.dart';
 import 'package:prodev/core/storage/cache_storage.dart';
 import 'package:prodev/env/env.dart';
 import 'package:prodev/firebase_options.dart';
-
-final notificationPlugin = FlutterLocalNotificationsPlugin();
-const initializationSettings = InitializationSettings(
-  android: AndroidInitializationSettings('@mipmap/ic_launcher'),
-  iOS: DarwinInitializationSettings(
-    requestProvisionalPermission: true,
-    requestCriticalPermission: true,
-  ),
-);
-
 
 Future<void> bootstrap(
   FutureOr<Widget> Function() builder, {
@@ -36,16 +22,12 @@ Future<void> bootstrap(
       );
     };
 
-    await notificationPlugin.initialize(initializationSettings);
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
     await setupLocator(environment: environment);
     await locator.get<SharedPrefs>().init();
-   
-    
 
-    
     // setLocaleMessages('en', MyCustomMessages());
     runApp(await builder());
   } catch (e) {
