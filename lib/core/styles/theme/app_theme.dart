@@ -314,29 +314,7 @@ class AppTheme {
           statusBarBrightness: isLight ? Brightness.dark : Brightness.light,
         ),
       ),
-      tabBarTheme: TabBarTheme(
-        labelColor: AppColors.neutral800,
-        unselectedLabelColor: AppColors.neutral400,
-        labelStyle: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 14.sp,
-          height: 20 / 14,
-          letterSpacing: 0,
-        ),
-        unselectedLabelStyle: TextStyle(
-          fontWeight: FontWeight.w400,
-          fontSize: 14.sp,
-          height: 20 / 14,
-          letterSpacing: 0,
-        ),
-        indicator: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(color: AppColors.white, width: 2.0),
-          ),
-        ),
-        indicatorSize: TabBarIndicatorSize.tab,
-        indicatorColor: AppColors.white,
-      ),
+     
       inputDecorationTheme: InputDecorationTheme(
         fillColor: isLight ? Colors.green.withAlpha(2) : Colors.grey[850],
         filled: true,

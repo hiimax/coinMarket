@@ -50,17 +50,17 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAgx4wJVpbiuqYGj7Ex8esl9Hbmfo6Ug-0',
-    appId: '1:39923091684:android:2fec213844af1c611f04f1',
-    messagingSenderId: '39923091684',
+    apiKey: '0',
+    appId: '1',
+    messagingSenderId: '',
     projectId: 'mamaspad',
     storageBucket: 'mamaspad.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBpPMaEfYR5Xo22JEyPu6tRva4RzULhuko',
-    appId: '1:39923091684:ios:2cb0e886538b2a6b1f04f1',
-    messagingSenderId: '39923091684',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
     projectId: 'mamaspad',
     storageBucket: 'mamaspad.firebasestorage.app',
     iosBundleId: 'com.transactify.transactify',
