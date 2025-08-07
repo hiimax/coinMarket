@@ -1,4 +1,3 @@
-import 'package:local_session_timeout/local_session_timeout.dart';
 import 'package:prodev/app/router_paths.dart';
 import 'package:prodev/core/utils/import.dart';
 import 'package:prodev/features/auth/screens/splashscreen.dart';
@@ -86,95 +85,12 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sessionConfig = SessionConfig(
-      invalidateSessionForAppLostFocus: const Duration(
-        seconds: kDebugMode ? 100000000 : 30,
-      ),
-      invalidateSessionForUserInactivity: const Duration(
-        minutes: kDebugMode ? 100000000 : 3,
-      ),
-    );
-
-    sessionConfig.stream.listen((SessionTimeoutState timeoutEvent) {
-      if (timeoutEvent == SessionTimeoutState.userInactivityTimeout) {
-        // showDialog(
-        //   context: context,
-        //   barrierDismissible: false,
-        //   builder:
-        //       (context) => Dialog(
-        //         backgroundColor: AppColors.transparent,
-        //         shape: RoundedRectangleBorder(
-        //           borderRadius: BorderRadius.circular(12),
-        //         ),
-        //         child: BackdropFilter(
-        //           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-        //           child: PopScope(
-        //             canPop: false,
-        //             child: AppLockedWidget(
-        //               message:
-        //                   'The app is locked for security reasons due to inactivity, please unlock the app to continue',
-        //               buttonTitle:
-        //                   locator.get<SharedPrefs>().biometricVerification ==
-        //                           true
-        //                       ? 'Unlock'
-        //                       : 'Login again',
-        //               unlock: () {
-        //                 locator.get<SharedPrefs>().biometricVerification == true
-        //                     ? launchBiometric(context, () {
-        //                       context.pop();
-        //                     })
-        //                     : context.pushReplacementNamed(
-        //                       AppPath.auth.login.path,
-        //                     );
-        //               },
-        //             ),
-        //           ),
-        //         ),
-        //       ),
-        // );
-      } else if (timeoutEvent == SessionTimeoutState.appFocusTimeout) {
-        // showDialog(
-        //   context: context,
-        //   builder:
-        //       (context) => Dialog(
-        //         backgroundColor: AppColors.transparent,
-        //         shape: RoundedRectangleBorder(
-        //           borderRadius: BorderRadius.circular(12),
-        //         ),
-        //         child: BackdropFilter(
-        //           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-        //           child: PopScope(
-        //             canPop: false,
-        //             child: AppLockedWidget(
-        //               message:
-        //                   'The app is locked for security reasons due to inactivity, please unlock the app  to continue',
-        //               buttonTitle:
-        //                   locator.get<SharedPrefs>().biometricVerification ==
-        //                           true
-        //                       ? 'Unlock'
-        //                       : 'Login again',
-        //               unlock: () {
-        //                 locator.get<SharedPrefs>().biometricVerification == true
-        //                     ? launchBiometric(context, () {
-        //                       context.pop();
-        //                     })
-        //                     : context.pushReplacementNamed(
-        //                       AppPath.auth.login.path,
-        //                     );
-        //               },
-        //             ),
-        //           ),
-        //         ),
-        //       ),
-        // );
-      }
-    });
-    return SessionTimeoutManager(
-      sessionConfig: sessionConfig,
-      child: ScaffoldWithNavigationBar(
-        body: navigationShell,
-        selectedIndex: navigationShell.currentIndex,
-        onDestinationSelected: _goBranch,
+   
+    return Scaffold(
+      body: navigationShell,
+      bottomNavigationBar: BottomNavWidget(
+        currentIndex: navigationShell.currentIndex,
+        onTap: _goBranch,
       ),
     );
   }
