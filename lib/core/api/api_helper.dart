@@ -136,7 +136,7 @@ class ApiHandler {
 
   void addToken(String token) {
     _dio.options.headers['Authorization'] =
-        'Bearer BQCRDvDo_j79cNFcwQQFcNBk9RocKounvzkbpO1c5B9R8W6sfhYtX7qo6gBb3illNDPziRZJ5JTEu-S6bbsSca4wHfh4oRv1Fnd1XFFQELLutPCY1syi4pTUzIKtCmW6lyUAnSKfrnw';
+        'Bearer BQA03nWAt024_yS_6Ej4shf8aIP1ImOw_gvs_dciH4NO6CvUPifTQIeQ5RGQfoSPN-qLLe6_JssyaJABBufvFOD4zTnh4qFimmtv69eh_AUbg1IlVmr0BvZcoIfNzMqhzJdwRwO81fE';
   }
 
   void clearToken() {
@@ -189,7 +189,7 @@ class ApiHandler {
         _dio.options.headers.remove('Authorization');
       } else {
         _dio.options.headers['Authorization'] =
-            'Bearer BQCRDvDo_j79cNFcwQQFcNBk9RocKounvzkbpO1c5B9R8W6sfhYtX7qo6gBb3illNDPziRZJ5JTEu-S6bbsSca4wHfh4oRv1Fnd1XFFQELLutPCY1syi4pTUzIKtCmW6lyUAnSKfrnw';
+            'Bearer BQA03nWAt024_yS_6Ej4shf8aIP1ImOw_gvs_dciH4NO6CvUPifTQIeQ5RGQfoSPN-qLLe6_JssyaJABBufvFOD4zTnh4qFimmtv69eh_AUbg1IlVmr0BvZcoIfNzMqhzJdwRwO81fE';
       }
       dio.Response<Map<String, dynamic>> response;
       switch (method) {
@@ -307,7 +307,7 @@ class ApiHandler {
         _dio.options.headers.remove('Authorization');
       } else {
         _dio.options.headers['Authorization'] =
-            'Bearer BQCRDvDo_j79cNFcwQQFcNBk9RocKounvzkbpO1c5B9R8W6sfhYtX7qo6gBb3illNDPziRZJ5JTEu-S6bbsSca4wHfh4oRv1Fnd1XFFQELLutPCY1syi4pTUzIKtCmW6lyUAnSKfrnw';
+            'Bearer BQA03nWAt024_yS_6Ej4shf8aIP1ImOw_gvs_dciH4NO6CvUPifTQIeQ5RGQfoSPN-qLLe6_JssyaJABBufvFOD4zTnh4qFimmtv69eh_AUbg1IlVmr0BvZcoIfNzMqhzJdwRwO81fE';
       }
       dio.Response<Map<String, dynamic>> response;
       switch (method) {
@@ -394,7 +394,7 @@ class ApiHandler {
         _dio.options.headers.remove('Authorization');
       } else {
         _dio.options.headers['Authorization'] =
-            'Bearer BQCRDvDo_j79cNFcwQQFcNBk9RocKounvzkbpO1c5B9R8W6sfhYtX7qo6gBb3illNDPziRZJ5JTEu-S6bbsSca4wHfh4oRv1Fnd1XFFQELLutPCY1syi4pTUzIKtCmW6lyUAnSKfrnw';
+            'Bearer BQA03nWAt024_yS_6Ej4shf8aIP1ImOw_gvs_dciH4NO6CvUPifTQIeQ5RGQfoSPN-qLLe6_JssyaJABBufvFOD4zTnh4qFimmtv69eh_AUbg1IlVmr0BvZcoIfNzMqhzJdwRwO81fE';
       }
       dio.Response<Map<String, dynamic>> response;
       switch (method) {
