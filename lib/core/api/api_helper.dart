@@ -136,7 +136,7 @@ class ApiHandler {
 
   void addToken(String token) {
     _dio.options.headers['Authorization'] =
-        'Bearer BQA03nWAt024_yS_6Ej4shf8aIP1ImOw_gvs_dciH4NO6CvUPifTQIeQ5RGQfoSPN-qLLe6_JssyaJABBufvFOD4zTnh4qFimmtv69eh_AUbg1IlVmr0BvZcoIfNzMqhzJdwRwO81fE';
+        'Bearer BQCjjOPu0aPnYwKUS41UwqpgSFKQwZBIQvPbsOivF5xsAbQElTDoaPGWHT8Cl3uZemEgWnTGswQeZA1Qq3PTlbHNWjQ_ruBSVuN5aQ6o0FAEJ5YzGhoJdr2H82KFb4wNAR__KKnNELk';
   }
 
   void clearToken() {
@@ -189,7 +189,7 @@ class ApiHandler {
         _dio.options.headers.remove('Authorization');
       } else {
         _dio.options.headers['Authorization'] =
-            'Bearer BQA03nWAt024_yS_6Ej4shf8aIP1ImOw_gvs_dciH4NO6CvUPifTQIeQ5RGQfoSPN-qLLe6_JssyaJABBufvFOD4zTnh4qFimmtv69eh_AUbg1IlVmr0BvZcoIfNzMqhzJdwRwO81fE';
+            'Bearer BQCjjOPu0aPnYwKUS41UwqpgSFKQwZBIQvPbsOivF5xsAbQElTDoaPGWHT8Cl3uZemEgWnTGswQeZA1Qq3PTlbHNWjQ_ruBSVuN5aQ6o0FAEJ5YzGhoJdr2H82KFb4wNAR__KKnNELk';
       }
       dio.Response<Map<String, dynamic>> response;
       switch (method) {
@@ -252,21 +252,7 @@ class ApiHandler {
       final error = ApiResponse<T>.error(
         ApiError(
           message:
-              (e.response?.data != null && e.response?.data is Map)
-                  ? e.response?.data['errors'].runtimeType == List
-                      ? e.response?.data['message'] ?? 'Please try again'
-                      : ((e.response?.data['errors'] as Map))
-                          .entries
-                          .first
-                          .value
-                          .toString()
-                          .replaceAll('{', '')
-                          .replaceAll('}', '')
-                          .split(':')
-                          .last
-                          .replaceAll('[', '')
-                          .replaceAll(']', '')
-                  : 'Internal server error',
+              'The access token expired',
           data: errorData,
           // ignore: avoid_bool_literals_in_conditional_expressions
           success:
@@ -307,7 +293,7 @@ class ApiHandler {
         _dio.options.headers.remove('Authorization');
       } else {
         _dio.options.headers['Authorization'] =
-            'Bearer BQA03nWAt024_yS_6Ej4shf8aIP1ImOw_gvs_dciH4NO6CvUPifTQIeQ5RGQfoSPN-qLLe6_JssyaJABBufvFOD4zTnh4qFimmtv69eh_AUbg1IlVmr0BvZcoIfNzMqhzJdwRwO81fE';
+            'Bearer BQCjjOPu0aPnYwKUS41UwqpgSFKQwZBIQvPbsOivF5xsAbQElTDoaPGWHT8Cl3uZemEgWnTGswQeZA1Qq3PTlbHNWjQ_ruBSVuN5aQ6o0FAEJ5YzGhoJdr2H82KFb4wNAR__KKnNELk';
       }
       dio.Response<Map<String, dynamic>> response;
       switch (method) {
@@ -394,7 +380,7 @@ class ApiHandler {
         _dio.options.headers.remove('Authorization');
       } else {
         _dio.options.headers['Authorization'] =
-            'Bearer BQA03nWAt024_yS_6Ej4shf8aIP1ImOw_gvs_dciH4NO6CvUPifTQIeQ5RGQfoSPN-qLLe6_JssyaJABBufvFOD4zTnh4qFimmtv69eh_AUbg1IlVmr0BvZcoIfNzMqhzJdwRwO81fE';
+            'Bearer BQCjjOPu0aPnYwKUS41UwqpgSFKQwZBIQvPbsOivF5xsAbQElTDoaPGWHT8Cl3uZemEgWnTGswQeZA1Qq3PTlbHNWjQ_ruBSVuN5aQ6o0FAEJ5YzGhoJdr2H82KFb4wNAR__KKnNELk';
       }
       dio.Response<Map<String, dynamic>> response;
       switch (method) {

@@ -22,9 +22,9 @@ Future<void> bootstrap(
       );
     };
 
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
+    // await Firebase.initializeApp(
+    //   options: DefaultFirebaseOptions.currentPlatform,
+    // );
     await setupLocator(environment: environment);
     await locator.get<SharedPrefs>().init();
 
