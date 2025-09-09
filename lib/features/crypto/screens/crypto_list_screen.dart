@@ -3,8 +3,10 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:prodev/core/hooks/use_init_hook.dart';
+import 'package:prodev/core/hooks/use_interval.dart';
 import 'package:prodev/core/singletons.dart';
 import 'package:prodev/core/utils/toast_util.dart';
+import 'package:prodev/core/widgets/app_textfield.dart';
 import 'package:prodev/features/crypto/components/crypto_header.dart';
 import 'package:prodev/features/crypto/components/crypto_list_widget.dart';
 import 'package:prodev/features/crypto/components/crypto_modal.dart';
@@ -28,19 +30,23 @@ class CryptoListScreen extends HookConsumerWidget {
       cryptoProvider.getCryptocurrencyList(
         onError: (val) {
           isLoading.value = false;
+
           context.showErrorMessage(message: val);
         },
         onSuccess: (val) {
+          cryptoProvider.setSearchedList();
           isLoading.value = false;
         },
       );
     });
-    // useInterval(() {
-    //   cryptoProvider.getCryptocurrencyList(
-    //     onError: (val) {},
-    //     onSuccess: (val) {},
-    //   );
-    // }, const Duration(seconds: 100));
+    useInterval(() {
+      cryptoProvider.getCryptocurrencyList(
+        onError: (val) {},
+        onSuccess: (val) {
+          cryptoProvider.setSearchedList();
+        },
+      );
+    }, const Duration(seconds: 10));
 
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
@@ -69,15 +75,12 @@ class CryptoListScreen extends HookConsumerWidget {
           ),
 
           // Search bar
-          CryptoSearchBar(
+          AppTextField(
             hintText: 'Search cryptocurrencies...',
             controller: searchController,
             onChanged: (value) {
-              // TODO: Implement search functionality
-            },
-            onClear: () {
-              searchController.clear();
-              // TODO: Clear search results
+              cryptoProvider.setQuery(value);
+              cryptoProvider.setSearchedList();
             },
           ),
 
@@ -100,7 +103,6 @@ class CryptoListScreen extends HookConsumerWidget {
           // Crypto list
           Expanded(
             child: CryptoListWidget(
-              coinMarketResponse: cryptoProvider.coinMarketResponseModel,
               isLoading: isLoading.value,
               onCoinTap: (coin) {
                 bottomSheetInstanceService.openPrimaryBottomSheet(

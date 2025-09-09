@@ -30,14 +30,42 @@ class CryptoProvider extends BaseChangeNotifier {
         if (data != null) {
           _coinMarketResponseModel =
               data.data ?? CoinMarketResponseModel.empty();
+
           onSuccess(data.message ?? '');
         }
       },
       error: (error) {
-        _coinMarketResponseModel = CoinMarketResponseModel.empty();
         onError(error.message ?? '');
       },
     );
+    notifyListeners();
+  }
+
+  List<CoinMarketData> _searchedList = [];
+  List<CoinMarketData> get searchedList => _searchedList;
+
+  String _query = '';
+  String get query => _query;
+
+  void setQuery(String query) {
+    _query = query;
+    notifyListeners();
+  }
+
+  void setSearchedList() {
+    if (_query.isEmpty) {
+      _searchedList = coinMarketResponseModel.data;
+      notifyListeners();
+      return;
+    }
+    _searchedList =
+        coinMarketResponseModel.data
+            .where(
+              (element) =>
+                  element.name.toLowerCase().contains(query.toLowerCase()) ||
+                  element.symbol.toLowerCase().contains(query.toLowerCase()),
+            )
+            .toList();
     notifyListeners();
   }
 }

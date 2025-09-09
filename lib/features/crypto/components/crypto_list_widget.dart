@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:prodev/core/widgets/app_loading_widget.dart';
 import 'package:prodev/features/crypto/components/crypto_coin_card.dart';
 import 'package:prodev/features/crypto/models/crypto_model.dart';
+import 'package:prodev/features/crypto/provider/crypto_provider.dart';
 import 'package:prodev/resources/colors.dart';
 
-class CryptoListWidget extends StatelessWidget {
-  final CoinMarketResponseModel coinMarketResponse;
+class CryptoListWidget extends HookConsumerWidget {
   final bool isLoading;
   final Function(CoinMarketData)? onCoinTap;
   final VoidCallback? onRetry;
 
   const CryptoListWidget({
     super.key,
-    required this.coinMarketResponse,
     this.isLoading = false,
     this.onCoinTap,
     this.onRetry,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final cryptoProvider = ref.watch(cryptoNotifierProvider);
     if (isLoading) {
-      return const AppLoading();
-    } else if (coinMarketResponse.data.isEmpty && !isLoading) {
+      return const AppLoading(color: AppColors.primaryIcon);
+    } else if (cryptoProvider.searchedList.isEmpty && !isLoading) {
       return _buildEmptyState();
     } else
       return RefreshIndicator(
@@ -32,9 +33,9 @@ class CryptoListWidget extends StatelessWidget {
         },
         child: ListView.builder(
           padding: EdgeInsets.symmetric(vertical: 8.h),
-          itemCount: coinMarketResponse.data.length,
+          itemCount: cryptoProvider.searchedList.length,
           itemBuilder: (context, index) {
-            final coin = coinMarketResponse.data[index];
+            final coin = cryptoProvider.searchedList[index];
             return CryptoCoinCard(
               coin: coin,
               onTap: () => onCoinTap?.call(coin),
