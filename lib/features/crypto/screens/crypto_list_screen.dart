@@ -114,7 +114,9 @@ class CryptoListScreen extends HookConsumerWidget {
               onRetry: () {
                 cryptoProvider.getCryptocurrencyList(
                   onError: (val) {},
-                  onSuccess: (val) {},
+                  onSuccess: (val) {
+                    cryptoProvider.setSearchedList();
+                  },
                 );
               },
             ),
