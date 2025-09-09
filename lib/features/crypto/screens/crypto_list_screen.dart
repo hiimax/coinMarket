@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:prodev/core/hooks/use_init_hook.dart';
+import 'package:prodev/core/singletons.dart';
+import 'package:prodev/core/utils/toast_util.dart';
+import 'package:prodev/features/crypto/components/crypto_header.dart';
+import 'package:prodev/features/crypto/components/crypto_list_widget.dart';
+import 'package:prodev/features/crypto/components/crypto_modal.dart';
+import 'package:prodev/features/crypto/components/crypto_search_widget.dart';
 import 'package:prodev/features/crypto/provider/crypto_provider.dart';
 import 'package:prodev/resources/colors.dart';
 
@@ -11,13 +18,30 @@ class CryptoListScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cryptoProvider = ref.watch(cryptoNotifierProvider);
+    final searchController = useTextEditingController();
+    final isLoading = useState(false);
+    String selectedFilter = 'All';
+    String selectedSort = 'Market Cap';
 
     useInitAsync(() {
+      isLoading.value = true;
       cryptoProvider.getCryptocurrencyList(
-        onError: (val) {},
-        onSuccess: (val) {},
+        onError: (val) {
+          isLoading.value = false;
+          context.showErrorMessage(message: val);
+        },
+        onSuccess: (val) {
+          isLoading.value = false;
+        },
       );
     });
+    // useInterval(() {
+    //   cryptoProvider.getCryptocurrencyList(
+    //     onError: (val) {},
+    //     onSuccess: (val) {},
+    //   );
+    // }, const Duration(seconds: 100));
+
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
@@ -33,7 +57,68 @@ class CryptoListScreen extends HookConsumerWidget {
         elevation: 0,
         centerTitle: true,
       ),
-      body: Column(),
+      body: Column(
+        children: [
+          // Header with stats
+          CryptoListHeader(
+            totalCount:
+                cryptoProvider.coinMarketResponseModel.status.totalCount
+                    .toInt(),
+            lastUpdated:
+                cryptoProvider.coinMarketResponseModel.status.timestamp,
+          ),
+
+          // Search bar
+          CryptoSearchBar(
+            hintText: 'Search cryptocurrencies...',
+            controller: searchController,
+            onChanged: (value) {
+              // TODO: Implement search functionality
+            },
+            onClear: () {
+              searchController.clear();
+              // TODO: Clear search results
+            },
+          ),
+
+          // Filter chips
+          CryptoFilterChips(
+            selectedFilter: selectedFilter,
+            onFilterChanged: (filter) {
+              // TODO: Implement filter functionality
+            },
+          ),
+
+          // Sort dropdown
+          CryptoSortDropdown(
+            selectedSort: selectedSort,
+            onSortChanged: (sort) {
+              // TODO: Implement sort functionality
+            },
+          ),
+
+          // Crypto list
+          Expanded(
+            child: CryptoListWidget(
+              coinMarketResponse: cryptoProvider.coinMarketResponseModel,
+              isLoading: isLoading.value,
+              onCoinTap: (coin) {
+                bottomSheetInstanceService.openPrimaryBottomSheet(
+                  context: context,
+                  bottomSheetWidget: CryptoModal(coin: coin),
+                  isScrollControlled: true,
+                );
+              },
+              onRetry: () {
+                cryptoProvider.getCryptocurrencyList(
+                  onError: (val) {},
+                  onSuccess: (val) {},
+                );
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

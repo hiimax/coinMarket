@@ -97,4 +97,17 @@ class AppUtils {
       return false;
     }
   }
+ static String formatNumber(num number) {
+    if (number >= 1e12) {
+      return '${(number / 1e12).toStringAsFixed(1)}T';
+    } else if (number >= 1e9) {
+      return '${(number / 1e9).toStringAsFixed(1)}B';
+    } else if (number >= 1e6) {
+      return '${(number / 1e6).toStringAsFixed(1)}M';
+    } else if (number >= 1e3) {
+      return '${(number / 1e3).toStringAsFixed(1)}K';
+    } else {
+      return number.toStringAsFixed(0);
+    }
+  }
 }
