@@ -39,15 +39,15 @@ class ApiSuccess<T> {
     T? Function(Map<String, dynamic> json)? fromJson,
   ) {
     return ApiSuccess(
-      message: (json['message']) as String?,
-      status: json['status'] as bool?,
+      message: (json['message']),
+      status: json['status'],
       data: fromJson?.call(json),
       // data: fromJson?.call(json['data'] as Map<String, dynamic>),
     );
   }
 
-  String? message;
-  bool? status;
+  dynamic message;
+  dynamic status;
   T? data;
 
   @override
@@ -63,8 +63,8 @@ class ListApiSuccess<T> {
     T Function(Map<String, dynamic> json) fromJson,
   ) {
     return ListApiSuccess(
-      message: json['message'] as String?,
-      status: json['status'] as bool?,
+      message: json['message'],
+      status: json['status'],
       data:
           (json['data'] as List)
               .map((e) => fromJson(e as Map<String, dynamic>))
@@ -72,8 +72,8 @@ class ListApiSuccess<T> {
     );
   }
 
-  String? message;
-  bool? status;
+  dynamic message;
+  dynamic status;
   List<T>? data;
 
   @override
@@ -116,7 +116,7 @@ class ApiHandler {
           ..options.receiveTimeout = const Duration(minutes: 5)
           ..options.sendTimeout = const Duration(minutes: 5)
           ..interceptors.add(DioFirebasePerformanceInterceptor())
-          // ..interceptors.add(DuduziliSecurityInterceptor())
+          ..interceptors.add(CoinMarketCapSecurityInterceptor())
           // ..interceptors.add(DuduziliEncryptionInterceptor())
           ..interceptors.add(
             PrettyDioLogger(
@@ -134,13 +134,17 @@ class ApiHandler {
 
   late final dio.Dio _dio;
 
-  void addToken(String token) {
-    _dio.options.headers['Authorization'] =
-        'Bearer BQCjjOPu0aPnYwKUS41UwqpgSFKQwZBIQvPbsOivF5xsAbQElTDoaPGWHT8Cl3uZemEgWnTGswQeZA1Qq3PTlbHNWjQ_ruBSVuN5aQ6o0FAEJ5YzGhoJdr2H82KFb4wNAR__KKnNELk';
-  }
+  // void addToken(String token) {
+  //   _dio.options.headers['Authorization'] =
+  //       'Bearer BQCjjOPu0aPnYwKUS41UwqpgSFKQwZBIQvPbsOivF5xsAbQElTDoaPGWHT8Cl3uZemEgWnTGswQeZA1Qq3PTlbHNWjQ_ruBSVuN5aQ6o0FAEJ5YzGhoJdr2H82KFb4wNAR__KKnNELk';
+  // }
 
-  void clearToken() {
-    _dio.options.headers.remove('Authorization');
+  // void clearToken() {
+  //   _dio.options.headers.remove('Authorization');
+  // }
+
+  void addCustomHeader(String key, String value) {
+    _dio.options.headers[key] = value;
   }
 
   Future<ApiResponse<T>> request<T>({
@@ -185,12 +189,12 @@ class ApiHandler {
       }
     }
     try {
-      if (!authenticate) {
-        _dio.options.headers.remove('Authorization');
-      } else {
-        _dio.options.headers['Authorization'] =
-            'Bearer BQCjjOPu0aPnYwKUS41UwqpgSFKQwZBIQvPbsOivF5xsAbQElTDoaPGWHT8Cl3uZemEgWnTGswQeZA1Qq3PTlbHNWjQ_ruBSVuN5aQ6o0FAEJ5YzGhoJdr2H82KFb4wNAR__KKnNELk';
-      }
+      // if (!authenticate) {
+      //   _dio.options.headers.remove('Authorization');
+      // } else {
+      //   _dio.options.headers['Authorization'] =
+      //       'Bearer BQCjjOPu0aPnYwKUS41UwqpgSFKQwZBIQvPbsOivF5xsAbQElTDoaPGWHT8Cl3uZemEgWnTGswQeZA1Qq3PTlbHNWjQ_ruBSVuN5aQ6o0FAEJ5YzGhoJdr2H82KFb4wNAR__KKnNELk';
+      // }
       dio.Response<Map<String, dynamic>> response;
       switch (method) {
         case MethodType.get:
@@ -251,8 +255,7 @@ class ApiHandler {
           .replaceAll(']', '');
       final error = ApiResponse<T>.error(
         ApiError(
-          message:
-              'The access token expired',
+          message: 'The access token expired',
           data: errorData,
           // ignore: avoid_bool_literals_in_conditional_expressions
           success:
@@ -289,12 +292,12 @@ class ApiHandler {
     bool authenticate = true,
   }) async {
     try {
-      if (!authenticate) {
-        _dio.options.headers.remove('Authorization');
-      } else {
-        _dio.options.headers['Authorization'] =
-            'Bearer BQCjjOPu0aPnYwKUS41UwqpgSFKQwZBIQvPbsOivF5xsAbQElTDoaPGWHT8Cl3uZemEgWnTGswQeZA1Qq3PTlbHNWjQ_ruBSVuN5aQ6o0FAEJ5YzGhoJdr2H82KFb4wNAR__KKnNELk';
-      }
+      // if (!authenticate) {
+      //   _dio.options.headers.remove('Authorization');
+      // } else {
+      //   _dio.options.headers['Authorization'] =
+      //       'Bearer BQCjjOPu0aPnYwKUS41UwqpgSFKQwZBIQvPbsOivF5xsAbQElTDoaPGWHT8Cl3uZemEgWnTGswQeZA1Qq3PTlbHNWjQ_ruBSVuN5aQ6o0FAEJ5YzGhoJdr2H82KFb4wNAR__KKnNELk';
+      // }
       dio.Response<Map<String, dynamic>> response;
       switch (method) {
         case MethodType.get:
@@ -376,12 +379,12 @@ class ApiHandler {
     bool authenticate = true,
   }) async {
     try {
-      if (!authenticate) {
-        _dio.options.headers.remove('Authorization');
-      } else {
-        _dio.options.headers['Authorization'] =
-            'Bearer BQCjjOPu0aPnYwKUS41UwqpgSFKQwZBIQvPbsOivF5xsAbQElTDoaPGWHT8Cl3uZemEgWnTGswQeZA1Qq3PTlbHNWjQ_ruBSVuN5aQ6o0FAEJ5YzGhoJdr2H82KFb4wNAR__KKnNELk';
-      }
+      // if (!authenticate) {
+      //   _dio.options.headers.remove('Authorization');
+      // } else {
+      //   _dio.options.headers['Authorization'] =
+      //       'Bearer BQCjjOPu0aPnYwKUS41UwqpgSFKQwZBIQvPbsOivF5xsAbQElTDoaPGWHT8Cl3uZemEgWnTGswQeZA1Qq3PTlbHNWjQ_ruBSVuN5aQ6o0FAEJ5YzGhoJdr2H82KFb4wNAR__KKnNELk';
+      // }
       dio.Response<Map<String, dynamic>> response;
       switch (method) {
         case MethodType.get:
@@ -468,6 +471,21 @@ class RequestConfig<T> {
   final T? Function(Map<String, dynamic> json)? responseMapper;
   final bool authenticate;
   final Map<String, dynamic>? files;
+}
+
+class CoinMarketCapSecurityInterceptor extends dio.InterceptorsWrapper {
+  @override
+  void onRequest(
+    dio.RequestOptions options,
+    dio.RequestInterceptorHandler handler,
+  ) {
+    options.headers.addAll({
+      'X-CMC_PRO_API_KEY': Env().apiKey,
+      'Accept-Encoding': 'deflate, gzip',
+      'Accept': 'application/json',
+    });
+    handler.next(options);
+  }
 }
 
 class DuduziliSecurityInterceptor extends dio.InterceptorsWrapper {

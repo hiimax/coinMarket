@@ -35,5 +35,10 @@ class AppColors {
   static const customColor2 = Color(0xffF2F2F2);
   static const customColor3 = Color(0xff8E8E8E);
   static const customColor4 = Color(0xff6156E2);
-  
+
+  // Additional colors for crypto app
+  static const backgroundColor = Color(0xffF8F9FA);
+  static const textColor = Color(0xff1A1A1A);
+  static const textSecondaryColor = Color(0xff6B7280);
+  static const errorColor = Color(0xffEF4444);
 }

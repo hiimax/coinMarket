@@ -1,12 +1,9 @@
 import 'package:prodev/app/router_paths.dart';
 import 'package:prodev/core/utils/import.dart';
 import 'package:prodev/features/auth/screens/splashscreen.dart';
-import 'package:prodev/features/heart/screens/heart.dart';
-import 'package:prodev/features/home/screens/home.dart';
-import 'package:prodev/features/map/screens/map.dart';
-import 'package:prodev/features/music/screens/music.dart';
+import 'package:prodev/features/crypto/screens/crypto_detail_screen.dart';
+import 'package:prodev/features/crypto/screens/crypto_list_screen.dart';
 import 'package:prodev/resources/colors.dart';
-import 'package:prodev/resources/resources.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>();
 final rootScaffoldStateKey = GlobalKey<ScaffoldState>();
@@ -31,42 +28,28 @@ final router = GoRouter(
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: AppPath.home.goRoute,
-              name: AppPath.home.path,
-              builder: (context, state) => const HomeScreen(),
-            ),
-          ],
-        ),
-        StatefulShellBranch(
-          routes: [
-            GoRoute(
-              path: AppPath.music.goRoute,
-              name: AppPath.music.path,
-              builder: (context, state) => const MusicScreen(),
-            ),
-          ],
-        ),
-
-        StatefulShellBranch(
-          routes: [
-            GoRoute(
-              path: AppPath.heart.goRoute,
-              name: AppPath.heart.path,
-              builder: (context, state) => const HeartScreen(),
-            ),
-          ],
-        ),
-        StatefulShellBranch(
-          routes: [
-            GoRoute(
-              path: AppPath.map.goRoute,
-              name: AppPath.map.path,
-              builder: (context, state) => const MapScreen(),
+              path: AppPath.crypto.goRoute,
+              name: AppPath.crypto.path,
+              builder: (context, state) => const CryptoListScreen(),
+              routes: [
+                GoRoute(
+                  path: AppPath.crypto.detail.goRoute,
+                  name: AppPath.crypto.detail.path,
+                  parentNavigatorKey: rootNavigatorKey,
+                  builder: (context, state) {
+                    return CryptoDetailScreen(
+                      cryptoId: state.uri.queryParameters['id'] ?? '',
+                    );
+                  },
+                ),
+              ],
             ),
           ],
         ),
       ],
     ),
+
+    // Crypto detail route (outside of bottom navigation)
   ],
 );
 
@@ -85,7 +68,6 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   
     return Scaffold(
       body: navigationShell,
       bottomNavigationBar: BottomNavWidget(
@@ -165,48 +147,12 @@ class BottomNavWidget extends StatelessWidget {
               },
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
-              child: SvgPicture.asset(
-                currentIndex == 0 ? SvgIcons.homeActive : SvgIcons.homeInactive,
-              ),
-            ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: () {
-                onTap(1);
-              },
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              child: SvgPicture.asset(
-                currentIndex == 1
-                    ? SvgIcons.musicActive
-                    : SvgIcons.musicInactive,
-              ),
-            ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: () {
-                onTap(2);
-              },
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              child: SvgPicture.asset(
-                currentIndex == 2
-                    ? SvgIcons.heartActive
-                    : SvgIcons.heartInactive,
-              ),
-            ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: () {
-                onTap(3);
-              },
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              child: SvgPicture.asset(
-                currentIndex == 3 ? SvgIcons.mapPin : SvgIcons.mapPin,
+              child: Icon(
+                currentIndex == 0
+                    ? Icons.currency_bitcoin
+                    : Icons.currency_bitcoin_outlined,
+                color: currentIndex == 0 ? Colors.white : Colors.white70,
+                size: 24.sp,
               ),
             ),
           ),

@@ -3,10 +3,7 @@ import 'package:go_router_paths/go_router_paths.dart';
 class AppPath {
   static final splash = SplashPath();
   static final auth = AuthPath();
-  static final home = HomePath();
-  static final music = MusicPath();
-  static final heart = HeartPath();
-  static final map = MapPath();
+  static final crypto = CryptoPath();
 }
 
 class SplashPath extends Path<SplashPath> {
@@ -17,29 +14,11 @@ class SplashPath extends Path<SplashPath> {
 
 class AuthPath extends Path<AuthPath> {
   AuthPath() : super('/auth');
-
- 
 }
 
-class HomePath extends Path<HomePath> {
-  HomePath() : super('/home');
-  
+class CryptoPath extends Path<CryptoPath> {
+  CryptoPath() : super('/crypto');
+
+  Path get list => Path('list', parent: this);
+  Path get detail => Path('detail', parent: this);
 }
-
-class MusicPath extends Path<MusicPath> {
-  MusicPath() : super('/music');
-
-
-  
-}
-
-class HeartPath extends Path<HeartPath> {
-  HeartPath() : super('/heart');
- 
-}
-
-class MapPath extends Path<MapPath> {
-  MapPath() : super('/map');
- 
-}
-

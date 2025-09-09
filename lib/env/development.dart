@@ -31,4 +31,12 @@ final class DevEnv implements Env, EnvFields {
   @override
   @EnviedField(varName: 'SOCKET_BASE_URL')
   final String socketUrl = _Env.socketUrl;
+
+  @override
+  @EnviedField(varName: 'CMC_API_KEY')
+  final String cmcApiKey = _Env.cmcApiKey;
+
+  @override
+  @EnviedField(varName: 'CMC_BASE_URL')
+  final String cmcBaseUrl = _Env.cmcBaseUrl;
 }

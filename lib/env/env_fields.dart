@@ -6,4 +6,6 @@ abstract interface class EnvFields {
   abstract final String encryptionKey;
   abstract final String encryptionVector;
   abstract final String socketUrl;
+  abstract final String cmcApiKey;
+  abstract final String cmcBaseUrl;
 }

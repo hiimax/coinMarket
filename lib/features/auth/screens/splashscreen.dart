@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: CustomElevatedButton(
             text: 'Get Started',
             onPressed: () {
-              context.pushReplacement(AppPath.home.path);
+              context.pushReplacement(AppPath.crypto.path);
             },
           ),
         ),
