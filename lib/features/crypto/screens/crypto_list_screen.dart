@@ -56,7 +56,7 @@ class CryptoListScreen extends HookConsumerWidget {
           style: TextStyle(
             fontSize: 20.sp,
             fontWeight: FontWeight.bold,
-            color: AppColors.textColor,
+            color: AppColors.white,
           ),
         ),
         backgroundColor: AppColors.primaryColor,
