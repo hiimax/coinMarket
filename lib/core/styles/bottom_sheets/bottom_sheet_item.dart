@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:prodev/core/styles/typography/text_styles.dart';
-import 'package:prodev/core/utils/spacer.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/core/styles/typography/text_styles.dart';
+import 'package:coin_market/core/utils/spacer.dart';
+import 'package:coin_market/resources/colors.dart';
 
 class BottomSheetItem extends StatelessWidget {
   const BottomSheetItem({

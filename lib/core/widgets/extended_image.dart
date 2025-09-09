@@ -1,6 +1,6 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:prodev/core/utils/import.dart';
+import 'package:coin_market/core/utils/import.dart';
 
 class ExtendedImageWidget extends HookWidget {
   final String? url;

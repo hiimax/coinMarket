@@ -1,4 +1,4 @@
-import 'package:prodev/core/utils/import.dart';
+import 'package:coin_market/core/utils/import.dart';
 
 class AppColors {
   static const white = Color(0xffffffff);

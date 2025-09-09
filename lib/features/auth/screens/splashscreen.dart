@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:prodev/app/router_paths.dart';
-import 'package:prodev/core/widgets/buttons.dart';
+import 'package:coin_market/app/router_paths.dart';
+import 'package:coin_market/core/widgets/buttons.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

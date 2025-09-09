@@ -1,8 +1,8 @@
-import 'package:prodev/app/service_locator.dart';
-import 'package:prodev/env/development.dart';
-import 'package:prodev/env/env_fields.dart';
-import 'package:prodev/env/production.dart';
-import 'package:prodev/env/staging.dart';
+import 'package:coin_market/app/service_locator.dart';
+import 'package:coin_market/env/development.dart';
+import 'package:coin_market/env/env_fields.dart';
+import 'package:coin_market/env/production.dart';
+import 'package:coin_market/env/staging.dart';
 
 enum AppEnvironment { dev, staging, prod }
 

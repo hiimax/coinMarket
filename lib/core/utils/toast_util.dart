@@ -1,7 +1,7 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:prodev/core/utils/spacer.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/core/utils/spacer.dart';
+import 'package:coin_market/resources/colors.dart';
 
 const kFlushBarDuration = 4;
 

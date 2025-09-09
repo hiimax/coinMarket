@@ -1,9 +1,9 @@
 import 'package:get_it/get_it.dart';
-import 'package:prodev/core/api/api_helper.dart';
-import 'package:prodev/core/storage/cache_storage.dart';
-import 'package:prodev/env/env.dart';
-import 'package:prodev/features/crypto/repository/crypto_repository.dart';
-import 'package:prodev/features/crypto/repository/crypto_repository_impl.dart';
+import 'package:coin_market/core/api/api_helper.dart';
+import 'package:coin_market/core/storage/cache_storage.dart';
+import 'package:coin_market/env/env.dart';
+import 'package:coin_market/features/crypto/repository/crypto_repository.dart';
+import 'package:coin_market/features/crypto/repository/crypto_repository_impl.dart';
 
 // import 'package:twilio_flutter/twilio_flutter.dart';
 

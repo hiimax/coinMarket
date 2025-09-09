@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:prodev/resources/resources.dart';
+import 'package:coin_market/resources/resources.dart';
 
 void main() {
   test('svg_icons assets test', () {

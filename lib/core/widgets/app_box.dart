@@ -1,5 +1,5 @@
-import 'package:prodev/core/utils/import.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/core/utils/import.dart';
+import 'package:coin_market/resources/colors.dart';
 
 class AppBox extends StatelessWidget {
   const AppBox({

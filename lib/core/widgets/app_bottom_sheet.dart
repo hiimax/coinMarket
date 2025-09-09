@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:prodev/core/utils/spacer.dart';
-import 'package:prodev/core/widgets/keyboard_focus_detector.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/core/utils/spacer.dart';
+import 'package:coin_market/core/widgets/keyboard_focus_detector.dart';
+import 'package:coin_market/resources/colors.dart';
 
 class AppBottomSheet extends StatelessWidget {
   const AppBottomSheet({

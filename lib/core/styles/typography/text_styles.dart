@@ -1,5 +1,5 @@
 import 'package:google_fonts/google_fonts.dart';
-import 'package:prodev/core/utils/import.dart'; // Assuming .sp extension is here
+import 'package:coin_market/core/utils/import.dart'; // Assuming .sp extension is here
 
 // const _fontFamily = FontFamily.euclidCircularA;
 final _fontFamily = GoogleFonts.nunito().fontFamily;

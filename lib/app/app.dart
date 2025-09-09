@@ -7,10 +7,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loader_overlay/loader_overlay.dart';
-import 'package:prodev/app/router.dart';
-import 'package:prodev/core/styles/theme/app_theme.dart';
-import 'package:prodev/l10n/app_localizations.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/app/router.dart';
+import 'package:coin_market/core/styles/theme/app_theme.dart';
+import 'package:coin_market/l10n/app_localizations.dart';
+import 'package:coin_market/resources/colors.dart';
 import 'package:toastification/toastification.dart';
 
 class ProDevApp extends HookConsumerWidget {

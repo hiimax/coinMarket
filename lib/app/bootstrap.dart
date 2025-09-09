@@ -3,10 +3,10 @@ import 'dart:developer';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:prodev/app/service_locator.dart';
-import 'package:prodev/core/storage/cache_storage.dart';
-import 'package:prodev/env/env.dart';
-import 'package:prodev/firebase_options.dart';
+import 'package:coin_market/app/service_locator.dart';
+import 'package:coin_market/core/storage/cache_storage.dart';
+import 'package:coin_market/env/env.dart';
+import 'package:coin_market/firebase_options.dart';
 
 Future<void> bootstrap(
   FutureOr<Widget> Function() builder, {

@@ -1,9 +1,9 @@
-import 'package:prodev/app/router_paths.dart';
-import 'package:prodev/core/utils/import.dart';
-import 'package:prodev/features/auth/screens/splashscreen.dart';
-import 'package:prodev/features/crypto/screens/crypto_detail_screen.dart';
-import 'package:prodev/features/crypto/screens/crypto_list_screen.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/app/router_paths.dart';
+import 'package:coin_market/core/utils/import.dart';
+import 'package:coin_market/features/auth/screens/splashscreen.dart';
+import 'package:coin_market/features/crypto/screens/crypto_detail_screen.dart';
+import 'package:coin_market/features/crypto/screens/crypto_list_screen.dart';
+import 'package:coin_market/resources/colors.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>();
 final rootScaffoldStateKey = GlobalKey<ScaffoldState>();

@@ -1,7 +1,7 @@
-// import 'package:prodev/core/utils/import.dart';
-// import 'package:prodev/core/utils/spacer.dart';
-// import 'package:prodev/core/widgets/extended_image.dart';
-// import 'package:prodev/resources/colors.dart';
+// import 'package:coin_market/core/utils/import.dart';
+// import 'package:coin_market/core/utils/spacer.dart';
+// import 'package:coin_market/core/widgets/extended_image.dart';
+// import 'package:coin_market/resources/colors.dart';
 
 // class AppProduct extends StatelessWidget {
 //   const AppProduct({

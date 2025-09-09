@@ -2,8 +2,8 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:prodev/resources/colors.dart';
-// import 'package:prodev/resources/resources.dart';
+// import 'package:coin_market/resources/colors.dart';
+// import 'package:coin_market/resources/resources.dart';
 
 // class AppDropdown2<T> extends StatelessWidget {
 //   const AppDropdown2({

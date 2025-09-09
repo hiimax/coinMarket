@@ -1,8 +1,8 @@
 // lib/env/env.dart
 
 import 'package:envied/envied.dart';
-import 'package:prodev/env/env.dart';
-import 'package:prodev/env/env_fields.dart';
+import 'package:coin_market/env/env.dart';
+import 'package:coin_market/env/env_fields.dart';
 
 part 'staging.g.dart';
 

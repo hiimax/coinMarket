@@ -3,8 +3,8 @@
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
-// import 'package:prodev/resources/colors.dart';
-// import 'package:prodev/resources/resources.dart';
+// import 'package:coin_market/resources/colors.dart';
+// import 'package:coin_market/resources/resources.dart';
 
 // /// Custom keyboard
 // class CustomKeyBoard extends StatefulWidget {

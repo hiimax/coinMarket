@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/resources/colors.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({

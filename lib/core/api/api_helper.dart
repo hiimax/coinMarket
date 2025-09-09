@@ -11,7 +11,7 @@ import 'package:firebase_performance_dio/firebase_performance_dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:prodev/env/env.dart';
+import 'package:coin_market/env/env.dart';
 
 part 'api_helper.freezed.dart';
 // part 'api_helper.g.dart';

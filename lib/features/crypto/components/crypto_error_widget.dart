@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/resources/colors.dart';
 
 class CryptoErrorWidget extends StatelessWidget {
   final String message;

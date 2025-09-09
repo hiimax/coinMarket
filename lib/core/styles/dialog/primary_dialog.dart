@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:prodev/app/router.dart';
-import 'package:prodev/core/utils/import.dart';
+import 'package:coin_market/app/router.dart';
+import 'package:coin_market/core/utils/import.dart';
 
 abstract class AbstractCoinMarketDialog {
   Future<T?> openDialog<T>({

@@ -1,10 +1,10 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:intl/intl.dart';
-import 'package:prodev/core/functions/dialog.dart';
-import 'package:prodev/core/utils/enable_photo_permission_dialog.dart';
-import 'package:prodev/core/utils/import.dart';
-import 'package:prodev/core/utils/toast_util.dart';
+import 'package:coin_market/core/functions/dialog.dart';
+import 'package:coin_market/core/utils/enable_photo_permission_dialog.dart';
+import 'package:coin_market/core/utils/import.dart';
+import 'package:coin_market/core/utils/toast_util.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 

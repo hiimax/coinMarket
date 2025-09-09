@@ -1,4 +1,4 @@
-import 'package:prodev/core/utils/import.dart';
+import 'package:coin_market/core/utils/import.dart';
 
 import '../../../resources/colors.dart';
 
@@ -24,7 +24,7 @@ class CryptoListHeader extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Top Cryptocurrencies',
+                'Live Market Data',
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
@@ -66,7 +66,8 @@ class CryptoListHeader extends StatelessWidget {
       ),
     );
   }
-   String _formatLastUpdated(String lastUpdated) {
+
+  String _formatLastUpdated(String lastUpdated) {
     try {
       final dateTime = DateTime.parse(lastUpdated);
       final now = DateTime.now();

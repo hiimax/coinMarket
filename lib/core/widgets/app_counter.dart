@@ -1,8 +1,8 @@
 // import 'package:flutter_hooks/flutter_hooks.dart';
-// import 'package:prodev/core/utils/import.dart';
-// import 'package:prodev/core/utils/spacer.dart';
-// import 'package:prodev/resources/colors.dart';
-// import 'package:prodev/resources/resources.dart';
+// import 'package:coin_market/core/utils/import.dart';
+// import 'package:coin_market/core/utils/spacer.dart';
+// import 'package:coin_market/resources/colors.dart';
+// import 'package:coin_market/resources/resources.dart';
 
 // class CounterWidget extends HookWidget {
 //   final int initialValue;

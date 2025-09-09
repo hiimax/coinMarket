@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/resources/colors.dart';
 
 class CustomDimensions {
   static const largeMargin = 24.0;

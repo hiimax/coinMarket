@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:prodev/app/router.dart';
+import 'package:coin_market/app/router.dart';
 
 class TransDialog implements AbstractTransDialog {
   TransDialog._();

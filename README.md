@@ -1,6 +1,6 @@
-# ProDev - Cryptocurrency Tracker
+# Coin Market - Live Cryptocurrency Tracker
 
-A Flutter application that displays cryptocurrency data using the CoinMarketCap API with real-time price updates via WebSocket integration.
+A Flutter application that displays real-time cryptocurrency market data using the CoinMarketCap API with live price updates and comprehensive market analytics.
 
 ## Features
 
@@ -77,7 +77,7 @@ lib/
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd prodev
+   cd coin_market
    ```
 
 2. **Install dependencies**

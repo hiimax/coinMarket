@@ -1,7 +1,7 @@
 
 import 'package:flutter/foundation.dart';
-import 'package:prodev/app/router.dart';
-import 'package:prodev/core/utils/toast_util.dart';
+import 'package:coin_market/app/router.dart';
+import 'package:coin_market/core/utils/toast_util.dart';
 
 
 class BaseChangeNotifier extends ChangeNotifier {

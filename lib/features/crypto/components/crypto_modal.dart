@@ -1,9 +1,9 @@
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:prodev/core/utils/app_utils.dart';
-import 'package:prodev/core/utils/import.dart';
-import 'package:prodev/features/crypto/models/crypto_model.dart';
-import 'package:prodev/features/crypto/provider/crypto_provider.dart';
+import 'package:coin_market/core/utils/app_utils.dart';
+import 'package:coin_market/core/utils/import.dart';
+import 'package:coin_market/features/crypto/models/crypto_model.dart';
+import 'package:coin_market/features/crypto/provider/crypto_provider.dart';
 
 import '../../../resources/colors.dart';
 

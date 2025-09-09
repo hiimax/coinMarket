@@ -1,8 +1,8 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:prodev/app/base_change_notifier.dart';
-import 'package:prodev/app/service_locator.dart';
-import 'package:prodev/features/crypto/models/crypto_model.dart';
-import 'package:prodev/features/crypto/repository/crypto_repository.dart';
+import 'package:coin_market/app/base_change_notifier.dart';
+import 'package:coin_market/app/service_locator.dart';
+import 'package:coin_market/features/crypto/models/crypto_model.dart';
+import 'package:coin_market/features/crypto/repository/crypto_repository.dart';
 
 final cryptoNotifierProvider = ChangeNotifierProvider<CryptoProvider>((ref) {
   return CryptoProvider(locator.get<CryptoRepository>());

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:prodev/core/utils/app_utils.dart';
-import 'package:prodev/features/crypto/models/crypto_model.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/core/utils/app_utils.dart';
+import 'package:coin_market/features/crypto/models/crypto_model.dart';
+import 'package:coin_market/resources/colors.dart';
 
 class CryptoCoinCard extends StatelessWidget {
   final CoinMarketData coin;

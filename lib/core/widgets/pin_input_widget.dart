@@ -1,7 +1,7 @@
 // import 'package:pinput/pinput.dart';
-// import 'package:prodev/core/utils/import.dart';
-// import 'package:prodev/resources/colors.dart';
-// import 'package:prodev/resources/resources.dart';
+// import 'package:coin_market/core/utils/import.dart';
+// import 'package:coin_market/resources/colors.dart';
+// import 'package:coin_market/resources/resources.dart';
 
 // class PinInputWidget extends StatelessWidget {
 //   const PinInputWidget({

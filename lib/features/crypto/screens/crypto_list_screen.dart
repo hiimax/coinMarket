@@ -1,18 +1,18 @@
+import 'package:coin_market/core/hooks/use_init_hook.dart';
+import 'package:coin_market/core/hooks/use_interval.dart';
+import 'package:coin_market/core/singletons.dart';
+import 'package:coin_market/core/utils/toast_util.dart';
+import 'package:coin_market/core/widgets/app_textfield.dart';
+import 'package:coin_market/features/crypto/components/crypto_header.dart';
+import 'package:coin_market/features/crypto/components/crypto_list_widget.dart';
+import 'package:coin_market/features/crypto/components/crypto_modal.dart';
+import 'package:coin_market/features/crypto/components/crypto_search_widget.dart';
+import 'package:coin_market/features/crypto/provider/crypto_provider.dart';
+import 'package:coin_market/resources/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:prodev/core/hooks/use_init_hook.dart';
-import 'package:prodev/core/hooks/use_interval.dart';
-import 'package:prodev/core/singletons.dart';
-import 'package:prodev/core/utils/toast_util.dart';
-import 'package:prodev/core/widgets/app_textfield.dart';
-import 'package:prodev/features/crypto/components/crypto_header.dart';
-import 'package:prodev/features/crypto/components/crypto_list_widget.dart';
-import 'package:prodev/features/crypto/components/crypto_modal.dart';
-import 'package:prodev/features/crypto/components/crypto_search_widget.dart';
-import 'package:prodev/features/crypto/provider/crypto_provider.dart';
-import 'package:prodev/resources/colors.dart';
 
 class CryptoListScreen extends HookConsumerWidget {
   const CryptoListScreen({super.key});
@@ -52,7 +52,7 @@ class CryptoListScreen extends HookConsumerWidget {
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         title: Text(
-          'Cryptocurrencies',
+          'Coin Market',
           style: TextStyle(
             fontSize: 20.sp,
             fontWeight: FontWeight.bold,

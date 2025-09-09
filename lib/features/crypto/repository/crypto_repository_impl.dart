@@ -1,6 +1,6 @@
-import 'package:prodev/core/api/api_helper.dart';
-import 'package:prodev/features/crypto/models/crypto_model.dart';
-import 'package:prodev/features/crypto/repository/crypto_repository.dart';
+import 'package:coin_market/core/api/api_helper.dart';
+import 'package:coin_market/features/crypto/models/crypto_model.dart';
+import 'package:coin_market/features/crypto/repository/crypto_repository.dart';
 
 class CryptoRepositoryImpl implements CryptoRepository {
   final ApiHandler _apiHandler;

@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/resources/colors.dart';
 
 
 class AppLoading extends StatelessWidget {

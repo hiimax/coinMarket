@@ -7,12 +7,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_maps_places_autocomplete_widgets/address_autocomplete_widgets.dart';
 import 'package:google_places_autocomplete_text_field/google_places_autocomplete_text_field.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:prodev/core/extensions/extension.dart';
-import 'package:prodev/core/styles/typography/text_styles.dart';
-import 'package:prodev/core/utils/spacer.dart';
-import 'package:prodev/core/widgets/app_text.dart';
-import 'package:prodev/core/widgets/highlighted_text.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/core/extensions/extension.dart';
+import 'package:coin_market/core/styles/typography/text_styles.dart';
+import 'package:coin_market/core/utils/spacer.dart';
+import 'package:coin_market/core/widgets/app_text.dart';
+import 'package:coin_market/core/widgets/highlighted_text.dart';
+import 'package:coin_market/resources/colors.dart';
 
 class AppTextField extends StatefulHookConsumerWidget {
   const AppTextField({

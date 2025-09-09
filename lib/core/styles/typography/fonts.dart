@@ -1,6 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
-import 'package:prodev/core/utils/import.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/core/utils/import.dart';
+import 'package:coin_market/resources/colors.dart';
 
 class TenantsFonts {
   static TextStyle get w700 =>

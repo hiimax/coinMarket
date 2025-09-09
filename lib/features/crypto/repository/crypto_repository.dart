@@ -1,5 +1,5 @@
-import 'package:prodev/core/api/api_helper.dart';
-import 'package:prodev/features/crypto/models/crypto_model.dart';
+import 'package:coin_market/core/api/api_helper.dart';
+import 'package:coin_market/features/crypto/models/crypto_model.dart';
 
 abstract class CryptoRepository {
   Future<ApiResponse<CoinMarketResponseModel>> getCryptocurrencyList({

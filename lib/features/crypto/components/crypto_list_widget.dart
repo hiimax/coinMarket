@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:prodev/core/widgets/app_loading_widget.dart';
-import 'package:prodev/features/crypto/components/crypto_coin_card.dart';
-import 'package:prodev/features/crypto/models/crypto_model.dart';
-import 'package:prodev/features/crypto/provider/crypto_provider.dart';
-import 'package:prodev/resources/colors.dart';
+import 'package:coin_market/core/widgets/app_loading_widget.dart';
+import 'package:coin_market/features/crypto/components/crypto_coin_card.dart';
+import 'package:coin_market/features/crypto/models/crypto_model.dart';
+import 'package:coin_market/features/crypto/provider/crypto_provider.dart';
+import 'package:coin_market/resources/colors.dart';
 
 class CryptoListWidget extends HookConsumerWidget {
   final bool isLoading;
